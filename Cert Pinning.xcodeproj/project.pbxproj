@@ -13,6 +13,10 @@
 		098D34BD27A262810055F1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098D34BB27A262810055F1A1 /* Main.storyboard */; };
 		098D34BF27A262820055F1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098D34BE27A262820055F1A1 /* Assets.xcassets */; };
 		098D34C227A262820055F1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098D34C027A262820055F1A1 /* LaunchScreen.storyboard */; };
+		098D34DF27A275450055F1A1 /* github.der in Resources */ = {isa = PBXBuildFile; fileRef = 098D34DB27A275450055F1A1 /* github.der */; };
+		098D34E027A275450055F1A1 /* youtube.der in Resources */ = {isa = PBXBuildFile; fileRef = 098D34DC27A275450055F1A1 /* youtube.der */; };
+		098D34E127A275450055F1A1 /* google.der in Resources */ = {isa = PBXBuildFile; fileRef = 098D34DD27A275450055F1A1 /* google.der */; };
+		098D34E427A2837E0055F1A1 /* facebook.der in Resources */ = {isa = PBXBuildFile; fileRef = 098D34E327A2837E0055F1A1 /* facebook.der */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		098D34BE27A262820055F1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		098D34C127A262820055F1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		098D34C327A262820055F1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		098D34DB27A275450055F1A1 /* github.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = github.der; sourceTree = "<group>"; };
+		098D34DC27A275450055F1A1 /* youtube.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = youtube.der; sourceTree = "<group>"; };
+		098D34DD27A275450055F1A1 /* google.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = google.der; sourceTree = "<group>"; };
+		098D34E327A2837E0055F1A1 /* facebook.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = facebook.der; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				098D34BE27A262820055F1A1 /* Assets.xcassets */,
 				098D34C027A262820055F1A1 /* LaunchScreen.storyboard */,
 				098D34C327A262820055F1A1 /* Info.plist */,
+				098D34DB27A275450055F1A1 /* github.der */,
+				098D34DD27A275450055F1A1 /* google.der */,
+				098D34DC27A275450055F1A1 /* youtube.der */,
+				098D34E327A2837E0055F1A1 /* facebook.der */,
 			);
 			path = "Cert Pinning";
 			sourceTree = "<group>";
@@ -125,8 +137,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098D34E427A2837E0055F1A1 /* facebook.der in Resources */,
 				098D34C227A262820055F1A1 /* LaunchScreen.storyboard in Resources */,
 				098D34BF27A262820055F1A1 /* Assets.xcassets in Resources */,
+				098D34E127A275450055F1A1 /* google.der in Resources */,
+				098D34DF27A275450055F1A1 /* github.der in Resources */,
+				098D34E027A275450055F1A1 /* youtube.der in Resources */,
 				098D34BD27A262810055F1A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +313,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +342,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

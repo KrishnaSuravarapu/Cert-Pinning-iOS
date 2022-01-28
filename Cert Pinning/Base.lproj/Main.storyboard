@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cert_Pinning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dl-HO-clb">
+                                <rect key="frame" x="2" y="46" width="412" height="735"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zA9-hP-KK4">
+                                <rect key="frame" x="2" y="801" width="412" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="fRL-S2-SZM"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="U5S-OC-YU5"/>
+                                </connections>
+                            </searchBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1k3-pu-XPw">
+                                <rect key="frame" x="10" y="806" width="395" height="4"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-aO-udx">
+                                <rect key="frame" x="2" y="46" width="412" height="44.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44.5" id="ifg-as-5ad"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Pinning" id="395-Zw-FX5"/>
+                                    <barButtonItem style="plain" id="GrI-VI-3jn">
+                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="F7j-Tj-zjp">
+                                            <rect key="frame" x="87.5" y="7" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="certPinningToggle"/>
+                                        </switch>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="WBN-Fx-mSq">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="2ws-Tx-Xyc">
+                                            <rect key="frame" x="138.5" y="5" width="75" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="clearDataButton"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain">
+                                                <imageReference key="image" image="trash.fill" catalog="system"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="deleteData:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="9Ec-Zs-djF"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="23" style="plain" systemItem="fixedSpace" id="pI5-v6-fzx"/>
+                                    <barButtonItem title="Cert" id="QL2-hw-gCS"/>
+                                    <barButtonItem style="plain" id="TK2-f5-SYp">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5c4-1w-kQ3">
+                                            <rect key="frame" x="289" y="5.5" width="118" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="certText"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="6vR-c3-YUR"/>
+                            <constraint firstItem="1k3-pu-XPw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AB6-lb-8xe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1k3-pu-XPw" secondAttribute="bottom" constant="41.5" id="Blx-c3-vxs"/>
+                            <constraint firstItem="zA9-hP-KK4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H6d-oo-erI"/>
+                            <constraint firstItem="cHj-aO-udx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="JtP-EH-XFP"/>
+                            <constraint firstItem="zA9-hP-KK4" firstAttribute="centerX" secondItem="1k3-pu-XPw" secondAttribute="centerX" id="PZx-Og-ljW"/>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="leading" secondItem="cHj-aO-udx" secondAttribute="leading" id="QDD-ce-OBZ"/>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="top" secondItem="cHj-aO-udx" secondAttribute="top" id="TuR-5x-4cS"/>
+                            <constraint firstItem="zA9-hP-KK4" firstAttribute="top" secondItem="1k3-pu-XPw" secondAttribute="top" id="ddk-vz-JRc"/>
+                            <constraint firstAttribute="trailing" secondItem="zA9-hP-KK4" secondAttribute="trailing" id="e7g-bY-DfL"/>
+                            <constraint firstItem="zA9-hP-KK4" firstAttribute="top" secondItem="6dl-HO-clb" secondAttribute="bottom" constant="20" id="fNZ-Yn-666"/>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="trailing" secondItem="zA9-hP-KK4" secondAttribute="trailing" id="pVH-Aj-uSl"/>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="trailing" secondItem="cHj-aO-udx" secondAttribute="trailing" id="pxL-ls-XkZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zA9-hP-KK4" secondAttribute="bottom" constant="5" id="qK8-vG-9dH"/>
+                            <constraint firstItem="6dl-HO-clb" firstAttribute="leading" secondItem="zA9-hP-KK4" secondAttribute="leading" id="uT1-LK-RAv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="certText" destination="5c4-1w-kQ3" id="ddV-cW-ELB"/>
+                        <outlet property="progressBar" destination="1k3-pu-XPw" id="RTK-1h-fOJ"/>
+                        <outlet property="searchBar" destination="zA9-hP-KK4" id="AcT-R9-3bE"/>
+                        <outlet property="switchCertPinning" destination="F7j-Tj-zjp" id="jeD-81-nJa"/>
+                        <outlet property="toggleCertPinning" destination="GrI-VI-3jn" id="fGp-oi-hAh"/>
+                        <outlet property="webView" destination="6dl-HO-clb" id="RRn-eU-ANz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1246.376811594203" y="-460.71428571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
